@@ -2,10 +2,13 @@ package com.feeprocess.student;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
-import org.springframework.web.client.RestTemplate;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
+@EnableDiscoveryClient
+@EnableFeignClients
+//@OpenAPIDefinition(info = @Info(title = "Student Service API", version = "1.0", description = "APIs for Student Management"))
 public class StudentApplication {
 
 	public static void main(String[] args) {
@@ -13,9 +16,8 @@ public class StudentApplication {
 	}
 	
 
-    @Bean
-    public RestTemplate restTemplate() {
-        return new RestTemplate();
-    }
+	/*
+	 * @Bean public RestTemplate restTemplate() { return new RestTemplate(); }
+	 */
 
 }
